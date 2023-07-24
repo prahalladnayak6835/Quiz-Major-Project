@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<!--   <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet">-->
+
+
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet">
+<!--    <style type="text/css">@font-face { font-family: Roboto; src: url("chrome-extension://mcgbeeipkmelnpldkobichboakdfaeon/css/Roboto-Regular.ttf"); }</style>-->
+</head>
+<body>
+<!--<div class="container">-->
+
+
+
+    <!-- <div class="text-center"-->
+    <center>
+        <h1>List Of The Candidates Registered</h1>
+    </center>
+    <h3>Here Is the Candidates Who had Registered For The Exam</h3>
+    <!-- </div>-->
+
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-dark">
+        <tr style="height:100px">
+            <th>Profile Id</th>
+            <th>First Name</th>
+            <th>Father Name</th>
+            <th>Mother Name</th>
+            <th>Date Of Birth</th>
+            <th>Gender</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>Email Id</th>
+            <th>Highest Qualification</th>
+            <th>College Name</th>
+            <th>Degree</th>
+            <th>Year Of Pass</th>
+            <th>Field</th>
+            <th>Actions</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="profile : ${candidate}" style="height:60px">
+            <td th:text="${profile.getProfileId()}">Profile Id</td>
+            <td th:text="${profile.name}">First Name</td>
+            <td th:text="${profile.fatherName}">Father Name</td>
+            <td th:text="${profile.motherName}">Mother Name</td>
+            <td th:text="${profile.dob}">Date Of Birth</td>
+            <td th:text="${profile.gender}">Gender</td>
+            <td th:text="${profile.phoneNumber}">Phone Number</td>
+            <td th:text="${profile.address}">Address</td>
+            <td th:text="${profile.emailId}">Email Id</td>
+            <td th:text="${profile.highestQualification}">Higher Qualification</td>
+            <td th:text="${profile.collegeName}">College Name</td>
+            <td th:text="${profile.degree}">Degree</td>
+            <td th:text="${profile.yop}">Year Of Pass</td>
+            <td th:text="${profile.field}">Field</td>
+            <td>
+                <a th:href="@{'/update/' + ${profile.id}}" class="btn btn-update">Update</a>
+
+                <a th:href="@{'/delete/' + ${profile.profileId}}" class="btn btn-delete">Delete</a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+    <!--<div><br/><br/></div-->
+<footer th:include="footer.html"></footer>
+</body>
+</html>

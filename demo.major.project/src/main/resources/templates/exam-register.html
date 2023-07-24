@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Exam Registration</title>
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            margin: 0;-->
+<!--            padding: 20px;-->
+<!--        }-->
+
+<!--        h1 {-->
+<!--            text-align: center;-->
+<!--        }-->
+
+<!--        form {-->
+<!--            max-width: 400px;-->
+<!--            margin: 0 auto;-->
+<!--            background-color: #f2f2f2;-->
+<!--            padding: 20px;-->
+<!--            border-radius: 5px;-->
+<!--            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+
+<!--        label {-->
+<!--            display: block;-->
+<!--            margin-bottom: 10px;-->
+<!--        }-->
+
+<!--        input[type="text"],-->
+<!--        input[type="password"],-->
+<!--        select {-->
+<!--            width: 100%;-->
+<!--            padding: 8px;-->
+<!--            border-radius: 5px;-->
+<!--            border: 1px solid #ccc;-->
+<!--            box-sizing: border-box;-->
+<!--            margin-bottom: 15px;-->
+<!--        }-->
+
+<!--        input[type="submit"] {-->
+<!--            background-color: #4CAF50;-->
+<!--            color: #fff;-->
+<!--            border: none;-->
+<!--            padding: 10px 16px;-->
+<!--            border-radius: 5px;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+
+<!--        input[type="submit"]:hover {-->
+<!--            background-color:blue;-->
+<!--        }-->
+    </style>
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+<header  th:include="header.html"></header>
+
+<h1>Exam Registration</h1>
+
+<form th:action="@{/exam-register}" method="post">
+
+    <label for="examId">Exam id:</label>
+    <input type="text" id="examId" name="examId" required><br><br>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" required><br><br>
+
+    <table>
+        <tr>
+            <td>Time slot:</td>
+            <td>
+                <select name="slot">
+                    <option th:each="timeslot : ${timeslotList}"
+                            th:text="${timeslot.getSlot()}"
+                            th:value="${timeslot.getSlot()}"></option>
+                </select>
+            </td>
+        </tr>
+    </table><br><br>
+
+    <div id="buttons">
+        <input id="submitButton" type="submit">
+        <button id="refreshButton" type="submit">Refresh</button>
+    </div>
+
+</form>
+<footer th:include="footer.html"></footer>
+</body>
+</html>

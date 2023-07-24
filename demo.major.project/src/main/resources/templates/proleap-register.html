@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Proleap Registration Form</title>
+<!--  <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            margin: 0;-->
+<!--            padding: 20px;-->
+<!--        }-->
+
+<!--        h1 {-->
+<!--            text-align: center;-->
+<!--        }-->
+
+<!--        form {-->
+<!--            max-width: 400px;-->
+<!--            margin: 0 auto;-->
+<!--            background-color: #f2f2f2;-->
+<!--            padding: 20px;-->
+<!--            border-radius: 5px;-->
+<!--            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+
+<!--        label {-->
+<!--            display: block;-->
+<!--            margin-bottom: 10px;-->
+<!--        }-->
+
+<!--        input[type="text"],-->
+<!--        input[type="password"],-->
+<!--        select {-->
+<!--            width: 100%;-->
+<!--            padding: 8px;-->
+<!--            border-radius: 5px;-->
+<!--            border: 1px solid #ccc;-->
+<!--            box-sizing: border-box;-->
+<!--            margin-bottom: 15px;-->
+<!--        }-->
+
+<!--        input[type="submit"] {-->
+<!--            background-color: #4CAF50;-->
+<!--            color: #fff;-->
+<!--            border: none;-->
+<!--            padding: 10px 16px;-->
+<!--            border-radius: 5px;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+
+<!--        input[type="submit"]:hover {-->
+<!--            background-color:blue;-->
+<!--        }-->
+<!--    </style>-->
+  <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+<header  th:include="header.html"></header>
+<h1>Proleap Registration Form</h1>
+<form th:action="@{/proleap-register}" method="post">
+  <div>
+    <label for="proleapId">Proleap Id:</label>
+    <input type="text" id="proleapId" name="proleapId">
+  </div>
+  <div>
+    <label for="name">Candidate Name:</label>
+    <input type="text" id="name" name="name">
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email">
+  </div>
+  <div>
+    <table>
+      <tr>
+        <td>Course : </td>
+        <td>
+          <select name="courseRegistered">
+            <option th:each="course : ${courseList}"
+                    th:text="${course.getCourseRegistered()}"
+                    th:value="${course.getCourseRegistered()}"></option>
+          </select>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <label for="joinDate">Date of Joining:</label>
+    <input type="date" id="joinDate" name="doj"></br></br>
+  </div>
+  <div>
+    <label for="uid">UID:</label>
+    <input type="text" id="uid" name="uid" >
+  </div>
+  <div>
+    <label for="psw">Password</label>
+    <input type="password" placeholder="Enter Password" name="password" id="psw" required>
+  </div>
+  <div>
+    <label for="psw-confirm">Confirm Password</label>
+    <input type="password" placeholder="Confirm Password" name="confPassword" id="psw-confirm" required>
+  </div>
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+</form>
+<footer th:include="footer.html"></footer>
+</body>
+</html>

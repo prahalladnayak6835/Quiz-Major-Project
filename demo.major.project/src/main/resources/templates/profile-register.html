@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:text-align="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Registration</title>
+  <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+<header  th:include="header.html"></header>
+<h1>Profile Registration Page</h1>
+<div class="centered">
+  <p text-align: center;>Please fill in this form to create an account.</p></div>
+<hr>
+<form th:action="@{/profile-register}" method="post">
+  <div>
+    <p>Personal Details:</p>
+    <label for="profileId"><b>Profile id:</b></label>
+    <input type="text" placeholder="Enter profileID" name="profileId" id="profileId" required></div>
+  <label for="name"><b>Name</b></label>
+  <input type="text" placeholder="Enter Name" name="name" id="name" required></div>
+
+  <label for="fathername"><b>FatherName</b></label>
+  <input type="text" placeholder="Enter FatherName" name="fatherName" id="fathername" required>
+
+  <label for="mothername"><b>MotherName</b></label>
+  <input type="text" placeholder="Enter MotherName" name="motherName" id="mothername" required>
+
+  <label for="date"><b>Date of Birth:</b></label>
+  <input type="date" placeholder="Enter Date" name="dob" id="date" required></br></br>
+  <div>
+    <label for="gender"><b>Gender</b></label>
+    <select id="gender" name="gender">
+      <option value="select">Select</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <p>Contact Details:</p>
+  <label for="number"><b>ContactNumber</b></label>
+  <input type="tel" placeholder="Enter ContactNumber" name="phoneNumber" id="number" required></br></br>
+
+  <label for="email"><b>Email</b></label>
+  <input type="text" placeholder="Enter Email" name="emailId" id="email" required>
+
+  <label for="address"><b>Address:</b></label>
+  <textarea placeholder="EnterAddress" name="address" id="address" required></textarea>
+  </br>
+  <p>Educational Details:</p>
+  <div>
+    <table>
+      <tr>
+        <td>Qualification: </td>
+        <td>
+          <select name="highestQualification">
+            <option th:each="qualification : ${qualificationList}"
+                    th:text="${qualification.getHighestQualification()}"
+                    th:value="${qualification.getHighestQualification()}"></option>
+          </select>
+        </td>
+      </tr>
+    </table>
+  </div>
+  </div>
+
+  <label for="college"><b>College Name:</b></label>
+  <input type="text" placeholder="Enter your College Name" name="collegeName" id="college" required>
+
+  <label for="degree"><b>Degree:</b></label>
+  <input type="text" placeholder="Enter your Degree" name="degree" id="degree" required>
+
+  <label for="yop"><b>year of passing:</b></label>
+  <input type="number" placeholder="YYYY" min="1980" max="2030" name="yop" id="yop"></br></br>
+
+  <label for="field"><b>Field of study:</b></label>
+  <input type="text" placeholder="Enter your field" name="field" id="field" required>
+
+
+  <div id="buttons">
+    <input id="submitButton" type="submit">
+    <button id="refreshButton" type="submit">Refresh</button>
+  </div>
+
+
+  </div>
+</form>
+<footer th:include="footer.html"></footer>
+</body>
+</html>

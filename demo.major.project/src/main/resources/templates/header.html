@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Quiz</title>
+
+ <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Online Quiz</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="/index">Home</a></li><br>
+        <li><a href="/">quiz</a></li><br>
+        <li><a href="/exam-register">Exam Registration</a></li><br>
+        <li><a href="/proleap-register">Proleap Registration</a></li><br>
+        <li><a href="/profile-register">Profile Registration</a></li><br>
+        <li><a href="/list-of-candidates">List of Candidate</a></li><br>
+        <li><a href="/about">About</a></li><br>
+        <div class="logout-button">
+            <form th:action="@{/logout}" method="post">
+
+                    <input type="submit" value="Logout">
+
+            </form>
+        </div>
+
+    </ul>
+
+</nav>
+</body>
+</html>

@@ -1,0 +1,223 @@
+/* styles.css */
+@media (min-width: 1025px) {
+.h-custom {
+height: 100vh !important;
+}
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color:#46C7C7;
+}
+
+/* Reset some default styles */
+
+header {
+
+            color: white;
+
+            padding: 40px;
+            text-align: center;
+            background-color: #E8F1D4;
+
+
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333; /* Dark grey */
+            color: yellow;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Navigation styles */
+nav {
+            background-color: #f2f2f2;
+            padding: 10px;
+
+        }
+
+        nav ul {
+
+            list-style-type: none;
+            margin-down: 10px;
+            padding: 0;
+            justify-content: center; /* Center the links horizontally */
+        }
+
+        nav ul li {
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: rgba(221, 221, 221, 0.8); /* Transparent grey background */
+        }
+
+        nav ul li a:hover {
+            background-color: ; /* Slightly darker transparent grey background */
+        }
+
+        input[type="submit"]:hover ,input[type="refresh"]{
+                    background-color:blue;
+                }
+        /* Logout button styles */
+ logout-button {
+            text-align: center;
+            margin-top: 10px;
+            /* Add some margin to move the logout button down */
+        }
+
+        .logout-button input[type="submit"] {
+            border: none;
+            background-color: red; /* Red */
+            color: white;
+            border-radius: 0px;
+
+        }
+
+        .logout-button input[type="submit"]:hover {
+            background-color: #00FFFF; /* Darker red */
+        }
+
+
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.table thead {
+    background-color: grey;
+    color: #fff;
+}
+
+.table a {
+    color: #007bff;
+    background-color:blue
+    text-decoration: none;
+}
+
+.table a:hover {
+    text-decoration: underline;
+}
+
+
+/* style.css */
+
+/* Global styles */
+
+
+/* Header */
+
+
+/* Centered content */
+.centered {
+  text-align: center;
+}
+
+/* Form styles */
+form {
+  max-width: 400px;
+              margin: 0 auto;
+              background-color: #f2f2f2;
+              padding: 5px;
+              border-radius: 5px;
+
+
+}
+h1{
+background:grey;
+color:white;
+text-align:center
+}
+p{
+text-align:center;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="password"]
+textarea,
+select {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background:white;
+}
+
+/* Buttons */
+buttons {
+  text-align: center;
+}
+
+
+
+.social-links{
+margin-bottom:20px;
+}
+.social-links a{
+display: inline-block;
+width: 40px;
+height: 40px;
+Line-height: 40px;
+text-align: center;
+border-radius: 50%;
+margin-right: 10px;
+color:#fff;
+background-color: #333;
+box-shadow: 0 2px 5px rgba(0.0,0,0.3);
+transition: all 0.4s ease
+}
+.social-links a:hover{
+transform: translateY(-3px);
+}*/
+
+.btn-update {
+            color: white;
+            background-color:blue; /* Blue color */
+            padding: 5px 10px; /* Adjust padding to make it smaller */
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* Delete button style */
+        .btn-delete {
+            color: black;
+            background-color: #dc3545; /* Red color */
+            padding: 5px 10px; /* Adjust padding to make it smaller */
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            display: inline-block;
+        }
+ input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color:blue;
+        }
+
+  div{
+  }
